@@ -1,11 +1,20 @@
-﻿
-using StaticExercise;
-using System;
+﻿using System;
 
-Console.WriteLine("Welcome to the Temperature Converter!");
-Console.WriteLine("Fahrentheit -> Celsius");
-Console.WriteLine(TempConverter.FahrenheitToCelsius(32)); // 0
+namespace StaticExercise
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("=== Temperature Conversion ===");
 
-Console.WriteLine("Celsius -> Fahrenheit");
-Console.WriteLine(TempConverter.CelsiusToFahrenheit(100)); 
+            double fahrenheit = 100;
+            double celsius = TempConverter.FahrenheitToCelsius(fahrenheit);
+            Console.WriteLine($"{fahrenheit}°F is {celsius:F2}°C");
 
+            double celsiusInput = 37;
+            double fahrenheitConverted = TempConverter.CelsiusToFahrenheit(celsiusInput);
+            Console.WriteLine($"{celsiusInput}°C is {fahrenheitConverted:F2}°F");
+        }
+    }
+}
